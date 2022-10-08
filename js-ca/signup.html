@@ -15,27 +15,31 @@
 
     </div>
 </header>
-<form>
-    <div class="container  mx-auto text-center p-8">
+
+<div class="container  mx-auto text-center p-8">
+    <form
+            id="signup-form"
+            class="flex flex-col gap-y-2 p-8 m-8 mx-auto w-96 bg-gray-300 rounded-md border shadow text-left"
+    >
         <h1 class="text-center text-3xl">😎 Create Account 😎</h1>
 
-            <input
-                    id="FirstName"
-                    class="p-2 rounded-xl border-2"
-                    name="firstName"
-                    type="text"
-                    placeholder="First Name"
-            >
-            <span
-                    id="firstNameError"
-                    class="hidden text-red-800 text-sm"
+        <input
+                id="FirstName"
+                class="p-2 rounded-xl border-2"
+                name="firstName"
+                type="text"
+                placeholder="First Name"
+        >
+        <span
+                id="firstNameError"
+                class="hidden text-red-800 text-sm"
 
-            >
+        >
                 First Name is required
             </span>
 
+    </form>
+</div>
 
-    </div>
-</form>
 </body>
 </html>
