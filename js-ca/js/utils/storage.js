@@ -10,7 +10,7 @@ function saveToken(token) {
 function getToken() {
     const value = localStorage.getItem(tokenKey);
     if (value) {
-        return JSON.parse(value); // convert to JS
+        return JSON.parse(value); // convert to js
     } else {
         return null
     }
@@ -39,7 +39,7 @@ function saveToStorage(key, value) {
 function getFromStorage(key) {
     const value = localStorage.getItem(key);
     if (value) {
-        return JSON.parse(value); // convert to JS
+        return JSON.parse(value); // convert to js
     } else {
         return []
     }

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>:: Signup ::</title>
     <script type="module" src="/main.js" defer></script>
-    <script type="module" src="./JS/sign-up.js" defer></script>
+    <script type="module" src="./js/sign-up.js" defer></script>
 
 </head>
 <body>
@@ -13,56 +15,27 @@
 
     </div>
 </header>
-<h1 class="text-center text-3xl">😎 Create Account 😎</h1>
-<div class="bg-grey-lighter min-h-screen flex flex-col mt-6">
-    <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
-        <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
+<form>
+    <div class="container  mx-auto text-center p-8">
+        <h1 class="text-center text-3xl">😎 Create Account 😎</h1>
+
             <input
                     id="FirstName"
+                    class="p-2 rounded-xl border-2"
+                    name="firstName"
                     type="text"
-                    class="block border border-grey-light w-full p-3 rounded mb-4"
-                    name="FirstName"
-                    placeholder="First Name" />
-            <span class="hidden">First name is reqierd</span>
+                    placeholder="First Name"
+            >
+            <span
+                    id="firstNameError"
+                    class="hidden text-red-800 text-sm"
 
-            <input
-                    id="email"
-                    type="text"
-                    class="block border border-grey-light w-full p-3 rounded mb-4"
-                    name="email"
-                    placeholder="Email" />
-            <span class="hidden">Email is requierd</span>
-
-            <input
-                    id="password"
-                    type="password"
-                    class="block border border-grey-light w-full p-3 rounded mb-4"
-                    name="password"
-                    placeholder="Password" />
-            <input
-                    id="confirm-password"
-                    type="password"
-                    class="block border border-grey-light w-full p-3 rounded mb-4"
-                    name="confirm_password"
-                    placeholder="Confirm Password" />
-
-            <button
-                    type="submit"
-                    class="w-full text-center py-3 rounded bg-green text-white hover:bg-green-dark focus:outline-none my-1"
-            >Create Account</button>
+            >
+                First Name is required
+            </span>
 
 
-        </div>
-        <div class="text-3xl"><a href="../login/">
-            Log in
-        </a></div>
-
-        <div class="text-grey-dark mt-6">
-            Already have an account?
-
-        </div>
     </div>
-</div>
-
+</form>
 </body>
 </html>
