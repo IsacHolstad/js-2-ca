@@ -1,7 +1,7 @@
 import  {getUserName} from "../utils/storage";
 
 const userName = getUserName();
-console.log("userName: ",userName);
+
 const API_BASE_URL = "https://nf-api.onrender.com/"
 // AUTH
 const USER_LOGIN_URL = API_BASE_URL + "api/v1/social/auth/login"
