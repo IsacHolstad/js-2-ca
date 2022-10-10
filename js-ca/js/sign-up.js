@@ -17,4 +17,12 @@ const passwordError = document.querySelector("#passwordError");
 const confirmPassword = document.querySelector("#confirm_password");
 const confirmPasswordError = document.querySelector("#confirmPasswordError");
 
+const confirmPasswordErrorNotMatching = document.querySelector("#confirmPasswordErrorNotMatching");
+const generalErrorMessage = document.querySelector("#general-error-message");
+
+contactForm.addEventListener("submit", function (event){
+    event.preventDefault();
+
+})
+
 
