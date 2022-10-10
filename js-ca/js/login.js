@@ -53,7 +53,7 @@ if (logInForm) {
                 const response = await fetch(LOGIN_USER_URL_ENDPOINT,{
                     method: "POST",
                     headers: {
-                        "Content-Type": "application(json"
+                        "Content-Type": "application/json"
                     },
                     body: JSON.stringify(userData)
                 });
