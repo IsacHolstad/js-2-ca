@@ -5,7 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>:: Signup ::</title>
-    <script type="module" src="/main.js" defer></script>
+    <script type="module" src="/js/main.js" defer></script>
     <script type="module" src="./js/sign-up.js" defer></script>
 
 </head>
@@ -19,7 +19,7 @@
 <div class="container  mx-auto text-center p-8">
     <form
             id="signup-form"
-            class="flex flex-col gap-y-2 p-8 m-8 mx-auto w-96 bg-gray-300 rounded-md border shadow text-left"
+            class="flex flex-col gap-y-2 p-8 m-8 mx-auto w-96 bg-gray-200 rounded-md border shadow text-left"
     >
         <h1 class="text-center text-3xl">😎 Create Account 😎</h1>
         <label for="FirstName"
@@ -61,7 +61,61 @@
         >
                 Email Is Required
             </span>
+        <label for="password"
+               class="text-gray-500 text-center"
+        >
+            Password: (Required)
+        </label>
+        <input
+                id="password"
+                class="p-2 rounded-xl border-2"
+                name="password"
+                type="password"
+                placeholder="*************">
+        <span
+                id="passwordError"
+                class="hidden text-sm text-red-500"
 
+        >
+             Password is required and must be over 8 chars
+
+        </span>
+        <span
+                id="passwordErrorNotValid"
+                class="hidden text-sm text-red-500"
+        >
+            Password not valid
+        </span>
+        <label for="confirm_password" class="text-gray-500 text-center">Confirm password: (Required)</label>
+        <input
+                id="confirm_password"
+                class="p-2 rounded-xl border-2"
+                name="password"
+                type="password"
+                placeholder="Confirm Password"
+        >
+        <span
+                id="confirmPasswordErrorNotMatching"
+                class="hidden text-sm text-red-500"
+        >
+            Password dosent match
+
+        </span>
+        <span
+                id="confirmPasswordError"
+                class="hidden text-sm text-red-500"
+        >
+            Confirm Password is required and must be 5 chars
+
+        </span>
+        <button
+                class="p-2 mt-4 text-blue-600 border-2 rounded-xl bg-transparent border-blue-600 hover:bg-blue-600 hover:text-white"
+                type="submit"
+        >
+            Sign Up
+
+        </button>
+        <p id="general-error-message" class="capitalize text-3xl text-red-500"></p>
     </form>
 </div>
 
