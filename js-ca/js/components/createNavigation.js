@@ -17,8 +17,10 @@ function createNavigation() {
             </li>
             <li class="p-8"><a href="./my-posts.html" class="${pathname === "my-posts.html" ? "text-blue-900" : ""}">My Posts</a>
             </li>
-            <li class="p-8"><span>Hey ${userName}</span></li>
-            <li class="p-8"><button id="logout-button">LogOut</button></li>
+            <li class="p-8"><span>Hey 👋 ${userName}</span></li>
+            <li class="p-8"><button id="logout-button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            Logout
+            </button></li>
             `
         }
         navBar.innerHTML = `
