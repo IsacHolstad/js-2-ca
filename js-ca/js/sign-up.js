@@ -23,7 +23,7 @@ contactForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
     let isFirstName = false;
-    if (firstName.value.trim().length > 0) {
+    if (firstName.value.trim().length > 0){
         firstNameError.classList.add("hidden");
         isFirstName = true;
     } else {
@@ -47,7 +47,7 @@ contactForm.addEventListener("submit", function (event) {
         emailErrorNotValid.classList.remove("hidden")
     }
     let isPassword = false;
-    if (password.value.trim().length >= 5) {
+    if (password.value.trim().length >= 8) {
         passwordError.classList.add("hidden")
         isPassword = true;
 
@@ -55,7 +55,7 @@ contactForm.addEventListener("submit", function (event) {
         passwordError.classList.remove("hidden")
     }
     let isConfirmPassword = false;
-    if (confirmPassword.value.trim().length >= 5) {
+    if (confirmPassword.value.trim().length >= 8) {
         confirmPassword.classList.add("hidden");
         isConfirmPassword = true;
 
