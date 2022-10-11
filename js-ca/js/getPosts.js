@@ -20,5 +20,26 @@ if (!accessToken){
         }
     })
     console.log(response)
-    if (response.ok) {}
-})()
+    if (response.ok) {
+        const posts = await response.json();
+        console.log(posts);
+        console.log("everything working so far!");
+        let now = moment(new Date());
+        console.log("posts: ", posts)
+        if (!posts.length) {
+            postNotificationMessage.innerHTML = `Sorry, Feed Is Empty`;
+        } else {
+            const listOfPosts = posts.map((post) =>{
+                console.log("indivudal posts: ", post);
+                const postBody = post.body;
+                const postTitle = post.title;
+                const postDate = post.created;
+                const minutesSinceCreated = now.diff(postDate, 'minutes');
+
+                return(`
+                //TODO add posts container html design and add data variables
+                `)
+            })
+        }
+    }
+})();
