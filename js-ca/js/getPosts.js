@@ -36,10 +36,35 @@ if (!accessToken){
                 const postDate = post.created;
                 const minutesSinceCreated = now.diff(postDate, 'minutes');
 
-                return(`
-                //TODO add posts container html design and add data variables
-                `)
-            })
+
+                return (`
+                <li class="relative px-8 py-5 bg-white focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 hover:bg-gray-50">
+               
+                    <div class="flex justify-between space-x-8">
+                        <div class="flex-1 min-w-0">
+                            <a href="/single-post.html?post_id=${post.id}" class="block focus:outline-none ">
+                                <span class="absolute inset-0" aria-hidden="true"></span>
+                                <p class="text-sm font-medium text-gray-900 truncate capitalize">${postTitle}</p>
+                            </a>
+                        </div>
+                        <time datetime="2021-01-27T16:35" class="flex-shrink-0 text-sm text-gray-400 whitespace-nowrap">${minutesSinceCreated} m
+                            ago
+                        </time>
+                    </div>
+                    <div class="mt-1">
+                        <p class="text-sm text-gray-400 line-clamp-2">${postBody}</p>
+                    </div>
+                </li>`)
+
+            }).join('')
+            postContainer.insertAdjacentHTML('beforeend', listOfPosts);
         }
+
+    } else {
+        const err = await response.json();
+        const message = `Error Happening ${err}`
+        throw new Error(message)
     }
-})();
+})().catch(err =>{
+    postNotificationMessage.innerHTML = err
+})
