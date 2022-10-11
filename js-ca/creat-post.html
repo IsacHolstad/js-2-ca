@@ -4,18 +4,75 @@
     <meta charset="UTF-8">
     <title>:: Create Post ::</title>
     <script type="module" src="./js/main.js" defer></script>
+    <script type="module" src="./js/createPost.js" defer></script>
 
 </head>
 <body>
 <header>
-    <div id="navigation" class="flex bg-blue-300">
+    <div id="navigation" class="flex dark:bg-gray-800 text-white">
 
     </div>
 </header>
+<div class="container  mx-auto text-center p-8 drop-shadow-md">
+    <form
+            id="create-post-form"
+            class="flex flex-col gap-y-2 p-8 m-8 mx-auto w-96 bg-gray-200 rounded-md border shadow text-left"
+    >
+        <h1 class="text-center text-3xl">😄 Create Post 😄</h1>
+        <label for="post-title"
+               class="text-gray-500 text-center"
+        >
+            post title: (Required)
+        </label>
+        <input
+                id="post-title"
+                class="p-2 rounded-xl border-2"
+                name="postTitle"
+                type="text"
+                placeholder="Title of your choice"
+        >
+        <span
+                id="postTitleError"
+                class="hidden text-sm text-red-500"
+
+        >
+            Post title is required
+
+        </span>
+
+        <label for="postDescription"
+               class="text-gray-500 text-center"
+        >
+            Password: (Required)
+        </label>
+        <textarea
+                id="postDescription"
+                class="p-2 rounded-xl border-2 h-28"
+                name="postDescription"
+                spellcheck="true"
+                placeholder="What is on your mind?"></textarea>
+        <span
+                id="postDescriptionError"
+                class="hidden text-sm text-red-500"
+
+        >
+             Post description is required
+
+        </span>
+        <button
+                class="p-2 mt-4 text-blue-600 border-2 rounded-xl bg-transparent border-blue-600 hover:bg-blue-600 hover:text-white"
+                type="submit"
+        >
+            Publish
+
+        </button>
+        <p id="general-error-message" class="capitalize text-3xl text-red-500"></p>
+    </form>
+</div>
 
 
 
-<footer class="p-4 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">
+<footer class="p-4 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 static bottom-0">
     <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 Isac™ All Rights Reserved.
     </span>
     <ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
