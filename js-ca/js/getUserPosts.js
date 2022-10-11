@@ -30,38 +30,26 @@ async function getMyPosts() {
                 console.log(posts[i].title)
                 const minutesSinceCreated = now.diff(created, "minutes");
                 postsContainer.innerHTML += `
-                <div class=" w-full  flex flex-col justify-center items-center p-4">
-                  <div class="bg-gray-800 text-white w-full max-w-md flex flex-col rounded-xl shadow-lg p-4">
-                    <div class="flex items-center justify-between">
-                      <div class="flex items-center space-x-4">
-                        <div class="rounded-full w-4 h-4 border border-purple-500"></div>
-                        <div class="text-md font-bold">${posts[i].title}</div>
-                            
-                      </div>
-                      
-                      <div class="flex items-center space-x-4">
-                        <div class="cursor-pointer">
-                                                <div>${posts[i].body}</div>
-
-                          <img class="w-5 h-5 rounded-lg" src="https://i.pravatar.cc/300" />
-                        </div>
-                        <div class="text-gray-500 hover:text-gray-300 cursor-pointer">
-                          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-                          </svg>
-                        </div>
-                        <div class="text-gray-500 hover:text-gray-300 cursor-pointer">
-                          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
-                          </svg>
-                        </div>
+                <div class=" flex items-center justify-center  container drop-shadow-md py-2 ">
+                  <div class="px-5 py-4 bg-white dark:bg-gray-800 shadow rounded-lg container ">
+                    <div class="flex mb-4">
+                      <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"/>
+                      <div class="ml-2 mt-0.5">
+                        <span class="block font-medium text-base leading-snug text-black dark:text-gray-100">${posts[i].title}</span>
                       </div>
                     </div>
-                    <time class="mt-4 text-gray-500 font-bold text-sm">
-                      ${minutesSinceCreated} m ago
-                    </time>
+                    <p class="text-gray-800 dark:text-gray-100 leading-snug md:leading-normal">${posts[i].body}</p>
+                    <div class="flex justify-between items-center mt-5">
+                    <div class="flex ">
+                      <svg class="p-0.5 h-6 w-6 rounded-full z-20 bg-white dark:bg-gray-800 " xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 16 16'><defs><linearGradient id='a1' x1='50%' x2='50%' y1='0%' y2='100%'><stop offset='0%' stop-color='#18AFFF'/><stop offset='100%' stop-color='#0062DF'/></linearGradient><filter id='c1' width='118.8%' height='118.8%' x='-9.4%' y='-9.4%' filterUnits='objectBoundingBox'><feGaussianBlur in='SourceAlpha' result='shadowBlurInner1' stdDeviation='1'/><feOffset dy='-1' in='shadowBlurInner1' result='shadowOffsetInner1'/><feComposite in='shadowOffsetInner1' in2='SourceAlpha' k2='-1' k3='1' operator='arithmetic' result='shadowInnerInner1'/><feColorMatrix in='shadowInnerInner1' values='0 0 0 0 0 0 0 0 0 0.299356041 0 0 0 0 0.681187726 0 0 0 0.3495684 0'/></filter><path id='b1' d='M8 0a8 8 0 00-8 8 8 8 0 1016 0 8 8 0 00-8-8z'/></defs><g fill='none'><use fill='url(#a1)' xlink:href='#b1'/><use fill='black' filter='url(#c1)' xlink:href='#b1'/><path fill='white' d='M12.162 7.338c.176.123.338.245.338.674 0 .43-.229.604-.474.725a.73.73 0 01.089.546c-.077.344-.392.611-.672.69.121.194.159.385.015.62-.185.295-.346.407-1.058.407H7.5c-.988 0-1.5-.546-1.5-1V7.665c0-1.23 1.467-2.275 1.467-3.13L7.361 3.47c-.005-.065.008-.224.058-.27.08-.079.301-.2.635-.2.218 0 .363.041.534.123.581.277.732.978.732 1.542 0 .271-.414 1.083-.47 1.364 0 0 .867-.192 1.879-.199 1.061-.006 1.749.19 1.749.842 0 .261-.219.523-.316.666zM3.6 7h.8a.6.6 0 01.6.6v3.8a.6.6 0 01-.6.6h-.8a.6.6 0 01-.6-.6V7.6a.6.6 0 01.6-.6z'/></g></svg>
+                      <span class="ml-1 text-gray-500 dark:text-gray-400  font-light">8</span>
+                    </div>  
+                    <div class="ml-1 text-gray-500 dark:text-gray-400 font-light">${minutesSinceCreated} m ago</div>
+                    </div>
                   </div>
                 </div>
+               
+                     
                 
                 `
             }
