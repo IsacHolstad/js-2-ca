@@ -8,7 +8,7 @@ const accessToken = getToken();
 const postsContainer = document.querySelector("#posts-container");
 const postsNotificationMessage = document.querySelector(".posts__notification");
 
-async function getMyPosts() {
+async function getUserPosts() {
     const response = await fetch(GET_USER_POSTS_URL, {
         method: "GET",
         headers: {
@@ -64,13 +64,13 @@ async function getMyPosts() {
         console.log("retriving post failed")
     }
 }
-getMyPosts().then(() =>{
+getUserPosts().then(() =>{
     handleDeleteBtnsEvent()
 })
 
 function handleDeleteBtnsEvent() {
     let deleteButtons = document.getElementsByClassName('delete-post-button');
-    console.log(deleteButtons)
+    console.log("delete buttons: ",deleteButtons)
 
     const totalNumbersOfDeleteBtns = deleteButtons.length;
     for (let i = 0; i < totalNumbersOfDeleteBtns; i++) {
@@ -103,7 +103,7 @@ function handleDeletePostById(id) {
             });
             if (response.status === 200){
                 console.log("deleted post button clicked");
-                getMyPosts().then(() => {
+                getUserPosts().then(() => {
                     handleDeleteBtnsEvent()
                 });
 
@@ -114,7 +114,7 @@ function handleDeletePostById(id) {
                 const message = `Sorry post could not be deleted ${err}`
                 throw Error(message)
             }
-        } catch (error) {
+        }catch (error) {
             console.log(error)
         }
     }
@@ -122,3 +122,4 @@ deleteUserById().then(r =>{
 
     })
 }
+
