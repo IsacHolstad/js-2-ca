@@ -51,6 +51,9 @@ getPostById().catch( err => {
 editPostForm.addEventListener("submit", function (event) {
     event.preventDefault();
     let isPostTitle = false;
+
+    //TODO cannot read trim() method
+
     if (isPostTitle.value.trim().length > 0) {
         postTitleError.classList.add("hidden");
         isPostTitle = true
@@ -59,6 +62,9 @@ editPostForm.addEventListener("submit", function (event) {
     }
 
     let isPostDescription = false;
+
+    //TODO cannot read trim() method
+
     if (isPostDescription.value.trim().length > 0) {
         postDescriptionError.classList.add("hidden")
         isPostDescription = true;
@@ -79,7 +85,6 @@ editPostForm.addEventListener("submit", function (event) {
         console.log(postData)
         const accessToken = getToken()
         console.log(accessToken)
-        console.log(EDIT_POST_URL)
         (async function editPost() {
             const response = await fetch(`${EDIT_POST_URL}/${postId}`, {
                 method: "PUT",
