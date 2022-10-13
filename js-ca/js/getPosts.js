@@ -37,7 +37,7 @@ if (!accessToken){
                 const minutesSinceCreated = now.diff(postDate, 'minutes');
                 return (`
                 <a href="./single-post.html">
-                 <div class=" flex items-center justify-center  container drop-shadow-md py-2 ">
+                 <div class=" flex items-center justify-center  container drop-shadow-md py-2">
                   <div class="px-5 py-4 bg-white dark:bg-gray-800 shadow rounded-lg container ">
                     <div class="flex mb-4">
                       <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="some randome women"/>
