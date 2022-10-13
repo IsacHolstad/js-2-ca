@@ -32,7 +32,7 @@ async function getPostById() {
         }
     })
     console.log("response ", response);
-    if (response.status === 200){
+    if (response.status === 200) {
         const data = await response.json();
         console.log(data);
         const {title, body, created, updated, id} = data;
