@@ -13,10 +13,8 @@ export default defineConfig({
                 createPosts: resolve(__dirname, 'creat-post.html'),
                 singlePosts: resolve(__dirname, 'single-post.html'),
                 editPosts: resolve(__dirname, 'edit-post.html'),
-                myPosts: resolve(__dirname, 'my-posts.html')
-
-
-
+                myPosts: resolve(__dirname, 'my-posts.html'),
+                myProfilePage: resolve(__dirname, 'profile-page.html')
 
             }
         }
