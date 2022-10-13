@@ -43,7 +43,7 @@ async function getUserPosts() {
                     <div class="flex ">
                       <span class="ml-4 text-white font-light flex ">
                         <button
-                               data-id="posts[i].id"
+                               data-id="${posts[i].id}"
                                type="button"
                                class="delete-post-button items-center bg-red-600 w-16 rounded-xl border-0 "
                           
