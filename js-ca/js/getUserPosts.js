@@ -46,11 +46,9 @@ async function getUserPosts() {
                                data-id="${posts[i].id}"
                                type="button"
                                class="delete-post-button items-center bg-red-600 w-16 rounded-xl border-0 "
-                          
-                        
                         > Delete
                         </button>
-                        <a href="./edit-post.html?post_id=${posts[i].id}" class="rounded-xl bg-blue-600 w-14 border-0 ml-3 block text-center">Edit</a>
+                        <a href="/edit-post.html?post_id=${posts[i].id}" class="rounded-xl bg-blue-600 w-14 border-0 ml-3 block text-center">Edit</a>
                       </span>
                     </div>  
                     <div class="ml-1 text-gray-500 dark:text-gray-400 font-light">${minutesSinceCreated} m ago</div>

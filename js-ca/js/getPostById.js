@@ -34,29 +34,24 @@ async function getPostById() {
     console.log(updated)
     console.log(id)
     postDetailContainer.innerHTML = `
-    <dl class="border-2 mx-auto ">
-        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt class="text-sm font-medium text-gray-500 capitalize">Title</dt>
-            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">${title}</dd>
-        </div>
-        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt class="text-sm font-medium text-gray-500 capitalize">Description</dt>
-            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">${body}</dd>
-        </div>
-        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt class="text-sm font-medium text-gray-500 capitalize">Created</dt>
-            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">${created}</dd>
-        </div>
-        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt class="text-sm font-medium text-gray-500 capitalize">Updated</dt>
-            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">${updated}</dd>
-        </div>
-    
-    
-    
-    
-    
-    </dl>
+                <div class=" flex items-center justify-center  container drop-shadow-md py-2">
+                  <div class="px-5 py-4 bg-white dark:bg-gray-800 shadow rounded-lg container ">
+                    <div class="flex mb-4">
+                      <div class="ml-2 mt-0.5">
+                        
+                         <span class="block font-medium text-base leading-snug text-black dark:text-gray-100 flex"><p class="text-gray-200 px-4">Title:</p> ${title}</span>
+                      </div>
+                    </div>
+                    <p class="text-gray-800 dark:text-gray-100 leading-snug md:leading-normal text-center">${body}</p>
+                    <div class="flex justify-between items-center mt-5">
+                    <div class="flex ">
+                      <span class="ml-4 text-white font-light flex ">
+                      </span>
+                    </div>  
+                    <div class="ml-1 text-gray-500 dark:text-gray-400 font-light">${created}</div>
+                    </div>
+                  </div>
+                </div>
     
     
     

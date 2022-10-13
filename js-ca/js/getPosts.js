@@ -36,7 +36,7 @@ if (!accessToken){
                 const postDate = post.created;
                 const minutesSinceCreated = now.diff(postDate, 'minutes');
                 return (`
-                <a href="./single-post.html">
+                <a href="./single-post.html?post_id=${post.id}">
                  <div class=" flex items-center justify-center  container drop-shadow-md py-2">
                   <div class="px-5 py-4 bg-white dark:bg-gray-800 shadow rounded-lg container ">
                     <div class="flex mb-4">
