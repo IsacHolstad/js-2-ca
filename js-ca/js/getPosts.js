@@ -38,23 +38,25 @@ if (!accessToken){
 
 
                 return (`
-                <li class="relative px-8 py-5 bg-white focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 hover:bg-gray-50">
-               
-                    <div class="flex justify-between space-x-8">
-                        <div class="flex-1 min-w-0">
-                            <a href="/single-post.html?post_id=${post.id}" class="block focus:outline-none ">
-                                <span class="absolute inset-0" aria-hidden="true"></span>
-                                <p class="text-sm font-medium text-gray-900 truncate capitalize">${postTitle}</p>
-                            </a>
-                        </div>
-                        <time datetime="2021-01-27T16:35" class="flex-shrink-0 text-sm text-gray-400 whitespace-nowrap">${minutesSinceCreated} m
-                            ago
-                        </time>
+                <div class=" flex items-center justify-center  container drop-shadow-md py-2 ">
+                  <div class="px-5 py-4 bg-white dark:bg-gray-800 shadow rounded-lg container ">
+                    <div class="flex mb-4">
+                      <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="some randome women"/>
+                      <div class="ml-2 mt-0.5">
+                        <span class="block font-medium text-base leading-snug text-black dark:text-gray-100">${postTitle}</span>
+                      </div>
                     </div>
-                    <div class="mt-1">
-                        <p class="text-sm text-gray-400 line-clamp-2">${postBody}</p>
+                    <p class="text-gray-800 dark:text-gray-100 leading-snug md:leading-normal text-center">${postBody}</p>
+                    <div class="flex justify-between items-center mt-5">
+                    <div class="flex ">
+                      <span class="ml-4 text-white font-light flex ">
+                      </span>
+                    </div>  
+                    <div class="ml-1 text-gray-500 dark:text-gray-400 font-light">${minutesSinceCreated} m ago</div>
                     </div>
-                </li>`)
+                  </div>
+                </div>
+                `)
 
             }).join('')
             postContainer.insertAdjacentHTML('beforeend', listOfPosts);
