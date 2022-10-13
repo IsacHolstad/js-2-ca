@@ -17,7 +17,7 @@ function createNavigation() {
             </li>
             <li class="p-8"><a href="./my-posts.html" class="${pathname === "/my-posts.html" ? "text-blue-900" : "hover:underline"}">My Posts</a>
             </li>
-            <li class="p-8"><span>Hey 👋${userName}</span></li>
+            <li class="p-8"><span>Hey 👋 ${userName}</span></li>
             <li class="p-8"><button id="logout-button" class="text-red-500 hover:underline">
             Logout
             </button></li>
