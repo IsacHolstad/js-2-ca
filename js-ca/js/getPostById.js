@@ -34,7 +34,7 @@ async function getPostById() {
     console.log(updated)
     console.log(id)
     postDetailContainer.innerHTML = `
-    <dl>
+    <dl class="">
         <div class="bg-gray-200 px-4 py-5 sm:grid sm:grid-cols-3 sm:_gap-4 sm:px-6">
             <dt class="capitalize text-sm font-medium text-gray-600">Title</dt>
             <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">${title}</dd>

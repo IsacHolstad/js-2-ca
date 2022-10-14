@@ -114,3 +114,4 @@ editPostForm.addEventListener("submit", function (event) {
         console.log("validation failed")
     }
 })
+console.log(editPostForm)
