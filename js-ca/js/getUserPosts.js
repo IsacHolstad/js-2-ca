@@ -21,7 +21,9 @@ async function getUserPosts() {
         postsContainer.innerHTML = "";
         const {posts} = jsonResponse;
         if (!posts.length) {
-            postsNotificationMessage.innerHTML = "Your Feed Is Empty";
+            postsNotificationMessage.innerHTML = `<h3 class="text-red-500 text-center">Your feed is empty</h3>
+                <a href="./creat-post.html" class="animate-bounce block pt-8 text-center hover:underline">Click me to make one</a>`
+
         } else {
             const numberOfPosts = posts.length;
             for (let i = 0; i < numberOfPosts; i++) {
