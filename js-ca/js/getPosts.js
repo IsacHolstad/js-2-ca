@@ -45,7 +45,7 @@ if (!accessToken){
                     <div class="flex mb-4">
                       <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="some randome women"/>
                       <div class="ml-2 mt-0.5">
-                         <span class="block font-medium text-base leading-snug text-black dark:text-gray-100">${postTitle}</span>
+                         <span class="block font-medium text-base leading-snug text-black dark:text-gray-100" id="postTitle-filter">${postTitle}</span>
                       </div>
                     </div>
                     <p class="text-gray-800 dark:text-gray-100 leading-snug md:leading-normal text-sm text-center">${postBody}</p>
@@ -76,4 +76,3 @@ if (!accessToken){
     postNotificationMessage.innerHTML = err
 })
 
-//TODO make search bar filter api data
