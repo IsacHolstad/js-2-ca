@@ -17,19 +17,16 @@ async function getUserPosts() {
     })
     if (response.ok) {
         const jsonResponse = await response.json();
-        console.log("got my post in log");
         postsContainer.innerHTML = "";
         const {posts} = jsonResponse;
         if (!posts.length) {
-            postsNotificationMessage.innerHTML = `<h3 class="text-red-500 text-center">Your feed is empty</h3>
-                <a href="./creat-post.html" class="animate-bounce block pt-8 text-center hover:underline">Click me to make one</a>`
+            postsNotificationMessage.innerHTML = `<h3 class="text-red-300 text-center">You don't have any posts</h3>
+                <a href="./creat-post.html" class=" animate-bounce bg-blue-600 block text-center rounded-xl mx-auto mt-32 text-white text-3xl drop-shadow-xl p-4">Click me to make a post</a>`
 
         } else {
             const numberOfPosts = posts.length;
             for (let i = 0; i < numberOfPosts; i++) {
                 const {created} = posts[i];
-                console.log(posts[i])
-                console.log(posts[i].title)
                 const minutesSinceCreated = now.diff(created, "minutes");
                 postsContainer.innerHTML += `
                 <div class=" flex items-center justify-center  container drop-shadow-md py-2 ">
@@ -47,10 +44,10 @@ async function getUserPosts() {
                         <button
                                data-id="${posts[i].id}"
                                type="button"
-                               class="delete-post-button items-center bg-red-600 w-16 rounded-xl border-0 "
+                               class="delete-post-button items-center bg-red-600 w-16 rounded-xl border-2 border-red-900 "
                         > Delete
                         </button>
-                        <a href="/edit-post.html?post_id=${posts[i].id}" class="rounded-xl bg-blue-600 w-14 border-0 ml-3 block text-center">Edit</a>
+                        <a href="/edit-post.html?post_id=${posts[i].id}" class="rounded-xl bg-blue-600 w-14 border-2 ml-3 block text-center border-blue-900">Edit</a>
                       </span>
                     </div>  
                     <div class="ml-1 text-gray-500 dark:text-gray-400 font-light">${minutesSinceCreated} m ago</div>
@@ -61,38 +58,28 @@ async function getUserPosts() {
         }
     } else {
         postsNotificationMessage.innerHTML = await response.json()
-        console.log("retriving post failed")
     }
 }
-getUserPosts().then(() =>{
+
+getUserPosts().then(() => {
     handleDeleteBtnsEvent()
 })
 
 function handleDeleteBtnsEvent() {
     let deleteButtons = document.getElementsByClassName('delete-post-button');
-    console.log("delete buttons: ",deleteButtons)
-
     const totalNumbersOfDeleteBtns = deleteButtons.length;
     for (let i = 0; i < totalNumbersOfDeleteBtns; i++) {
-        console.log(i);
         deleteButtons[i].addEventListener('click', function () {
-            console.log(`${i} hey i triggerd the click envent`)
-            console.log("this.dataset.postId: ", this.getAttribute("data-id"))
-            console.log(this.dataset)
-
             const postId = this.dataset.id;
             handleDeletePostById(postId);
         });
     }
-
-
 }
 
 function handleDeletePostById(id) {
-    console.log(id)
     const deleteUserById = async () => {
-        try{
-            let response = await fetch(`${DELETE_USER_POST_BY_ID}/${id}`,{
+        try {
+            let response = await fetch(`${DELETE_USER_POST_BY_ID}/${id}`, {
 
                 method: "DELETE",
                 headers: {
@@ -101,25 +88,21 @@ function handleDeletePostById(id) {
 
 
             });
-            if (response.status === 200){
-                console.log("deleted post button clicked");
+            if (response.status === 200) {
                 getUserPosts().then(() => {
                     handleDeleteBtnsEvent()
                 });
-
-
 
             } else {
                 const err = await response.json()
                 const message = `Sorry post could not be deleted ${err}`
                 throw Error(message)
             }
-        }catch (error) {
+        } catch (error) {
             console.log(error)
         }
     }
-deleteUserById().then(r =>{
+    deleteUserById().then(r => {
 
-    })
+    });
 }
-
