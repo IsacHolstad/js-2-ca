@@ -25,10 +25,8 @@ if (!accessToken){
     console.log(response)
     if (response.ok) {
         const posts = await response.json();
-        console.log(posts);
         console.log("everything working so far!");
         let now = moment(new Date());
-        console.log("posts: ", posts)
         if (!posts.length) {
             postNotificationMessage.innerHTML = `Sorry, Feed Is Empty`;
         } else {
