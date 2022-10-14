@@ -4,12 +4,10 @@ import {GET_POSTS_URL} from "./settings/api.js";
 import {getToken} from "./utils/storage.js";
 
 const searchBar = document.querySelector("#postSearch")
-console.log(searchBar)
 const postContainer = document.querySelector("#posts-container");
 const postNotificationMessage = document.querySelector(".posts__notification");
 const accessToken = getToken();
-console.log(accessToken);
-console.log(GET_POSTS_URL);
+
 
 if (!accessToken){
     location.href ="/login.html"
@@ -22,16 +20,13 @@ if (!accessToken){
             "Authorization" : `Bearer ${accessToken}`
         }
     })
-    console.log(response)
     if (response.ok) {
         const posts = await response.json();
-        console.log("everything working so far!");
         let now = moment(new Date());
         if (!posts.length) {
             postNotificationMessage.innerHTML = `Sorry, Feed Is Empty`;
         } else {
             const listOfPosts = posts.map((post) =>{
-                console.log("indivudal posts: ", post);
                 const postBody = post.body;
                 const postTitle = post.title;
                 const postDate = post.created;

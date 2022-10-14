@@ -1,5 +1,6 @@
 import {getToken} from "./utils/storage.js";
 import {CREATE_POST_URL, GET_POSTS_URL} from "./settings/api.js";
+
 const createPostForm = document.querySelector("#create-post-form");
 
 const postTitle = document.querySelector("#post-title");
@@ -9,16 +10,13 @@ const postDescription = document.querySelector("#postDescription");
 const postDescriptionError = document.querySelector("#postDescriptionError");
 
 
-
-console.log("Every element: ",postDescriptionError, postDescription, postTitleError, postTitle, createPostForm );
-
 createPostForm.addEventListener("submit", function (event) {
     event.preventDefault();
     let isPostTitle = false;
     if (postTitle.value.trim().length > 0) {
         postTitleError.classList.add("hidden");
         isPostTitle = true
-    } else{
+    } else {
         postTitle.classList.remove("hidden")
     }
     let isPostDescription = false;
@@ -31,17 +29,12 @@ createPostForm.addEventListener("submit", function (event) {
     let isFormValid = isPostTitle && isPostDescription;
 
     if (isFormValid) {
-        console.log("validation is working");
-        console.log(postTitle.value)
-        console.log(postDescription.value);
         const postData = {
             "title": postTitle.value,
             "body": postDescription.value
         };
-        console.log(postData)
         const accessToken = getToken();
-        console.log(accessToken)
-        console.log(CREATE_POST_URL);
+
         (async function creatPost() {
             const response = await fetch(CREATE_POST_URL, {
                 method: "POST",
@@ -51,11 +44,8 @@ createPostForm.addEventListener("submit", function (event) {
                 },
                 body: JSON.stringify(postData)
             })
-            console.log(response);
             if (response.ok) {
                 const data = await response.json();
-                console.log(data)
-                console.log("POST was created")
                 location.href = "/index.html"
             } else {
                 const err = await response.json();

@@ -25,12 +25,9 @@ async function getPostById() {
             "Authorization": `Bearer ${accessToken}`
         }
     })
-    console.log("response ", response);
     if (response.status === 200) {
         const data = await response.json();
-        console.log(data);
         const {title, body, created, updated, id} = data;
-        console.log(title, body, created, updated, id);
         postTitle.value = title;
         postDescription.value = body;
     } else{
@@ -62,19 +59,13 @@ editPostForm.addEventListener("submit", function (event) {
         postDescriptionError.classList.remove("hidden")
     }
     let isFormValid = isPostTitle && isPostDescription;
-    console.log(isFormValid)
 
     if (isFormValid) {
-        console.log("success")
-        console.log(postDescription)
         const postData = {
             "title": postTitle.value,
             "body": postDescription.value
         };
-        console.log(postData)
         const accessToken = getToken();
-
-
 
         (async function createPost() {
             const response = await fetch(`${EDIT_POST_URL}/${postId}`, {
@@ -87,8 +78,6 @@ editPostForm.addEventListener("submit", function (event) {
             })
             if (response.ok) {
                 const data = await response.json();
-                console.log(data);
-                console.log("post has been edited")
                 location.href = `single-post.html?post_id=${postId}`
             } else {
                 const err = await response.json();

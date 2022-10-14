@@ -77,7 +77,6 @@ contactForm.addEventListener("submit", function (event) {
         isConfirmPassword &&
         isValidPasswordMatch;
     if (isFormValid) {
-        console.log("SUCCESS!!!!!");
         const userData = {
             "name": firstName.value,
             "email": email.value,
@@ -95,7 +94,6 @@ contactForm.addEventListener("submit", function (event) {
                 });
                 const data = await response.json();
                 if (response.ok) {
-                    console.log("POST RECUEST SUCCESS");
                     location.replace("/")
                 } else {
                     generalErrorMessage.innerHTML = `sorry ${data.message}`

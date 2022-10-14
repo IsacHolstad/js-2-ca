@@ -3,7 +3,6 @@ import {validateEmail} from "./utils/validation.js";
 import {saveUser, saveToken} from "./utils/storage.js";
 
 const logInForm = document.querySelector("#login-form");
-console.log(logInForm);
 
 //TODO validate login data
 const email = document.querySelector("#email");
@@ -43,7 +42,6 @@ if (logInForm) {
 
         let isFormValid = isEmail && isValidEmail && isPassword;
         if (isFormValid) {
-            console.log("SUCCESS");
             const userData = {
                 "email" : email.value,
                 "password": password.value
@@ -59,21 +57,16 @@ if (logInForm) {
                 });
                 if (response.ok) {
                     const data = await response.json();
-                    console.log(data)
-                    console.log(data.accessToken)
                     saveToken(data.accessToken)
                     const userToSave = {
                         name: data.name,
                         email: data.email
                     }
-                    console.log(userToSave);
                     saveUser(userToSave);
-                    console.log("POST ReQUEST LOGIN SUCCEDED")
                     location.href = "/welcome.html"
                 } else {
                     const err = await response.json();
                     const message = `${err.message}`;
-                    console.log("post request failed")
                     throw new Error(message);
                 }
             })().catch(err => {
