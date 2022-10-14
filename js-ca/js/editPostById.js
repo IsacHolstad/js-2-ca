@@ -9,19 +9,12 @@ const postTitleError = document.querySelector("#postTitleError");
 const postDescription = document.querySelector("#postDescription");
 const postDescriptionError = document.querySelector("#postDescriptionError");
 
-console.log(accessToken)
-console.log(editPostForm)
-console.log(postTitle)
-console.log(postTitleError)
-console.log(postDescription)
-console.log(postDescriptionError)
+
 
 const paramString = window.location.search
-console.log(paramString);
 const searchParam = new URLSearchParams(paramString);
-console.log(searchParam);
 const postId = searchParam.get("post_id");
-console.log("id of this post: ", postId);
+
 
 async function getPostById() {
     const response = await fetch(`${GET_POST_BY_ID_URL}/${postId}`, {
@@ -47,6 +40,7 @@ async function getPostById() {
 getPostById().catch( err => {
     console.log(err)
 });
+console.log(isPostTitle)
 
 editPostForm.addEventListener("submit", function (event) {
     event.preventDefault();
