@@ -9,6 +9,16 @@ const postNotificationMessage = document.querySelector(".posts__notification");
 const accessToken = getToken();
 
 
+console.log(searchBar)
+
+
+
+
+
+
+
+
+
 if (!accessToken){
     location.href ="/login.html"
 }
@@ -68,4 +78,6 @@ if (!accessToken){
 })().catch(err =>{
     postNotificationMessage.innerHTML = err
 })
+
+
 
