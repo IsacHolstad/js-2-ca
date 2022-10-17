@@ -9,32 +9,15 @@ const postNotificationMessage = document.querySelector(".posts__notification");
 const accessToken = getToken();
 
 
-
-
-//TODO under
-let response = [];
-
-searchBar.addEventListener('keyup', (e) => {
-    console.log(e.target.value);
-    response.filter( titleOfPost =>{
-        pos
-    })
-
-});
-
-//TODO over
-
-
-
-if (!accessToken){
-    location.href ="/login.html"
+if (!accessToken) {
+    location.href = "/login.html"
 }
 (async function getPosts() {
     const response = await fetch(GET_POSTS_URL, {
         method: "GET",
         headers: {
             "Content_Type": "application/json",
-            "Authorization" : `Bearer ${accessToken}`
+            "Authorization": `Bearer ${accessToken}`
         }
     })
     if (response.ok) {
@@ -43,7 +26,7 @@ if (!accessToken){
         if (!posts.length) {
             postNotificationMessage.innerHTML = `Sorry, Feed Is Empty`;
         } else {
-            const listOfPosts = posts.map((post) =>{
+            const listOfPosts = posts.map((post) => {
                 const postBody = post.body;
                 const postTitle = post.title;
                 const postDate = post.created;
@@ -59,7 +42,6 @@ if (!accessToken){
                       </div>
                     </div>
                     <p class="text-gray-800 dark:text-gray-100 leading-snug md:leading-normal text-sm text-center">${postBody}</p>
-                    
                     <div class="flex justify-between items-center mt-5">
                     <div class="flex ">
                       <span class="ml-4 text-white font-light flex ">
@@ -82,9 +64,14 @@ if (!accessToken){
         const message = `Error Happening ${err}`
         throw new Error(message)
     }
-})().catch(err =>{
+})().catch(err => {
     postNotificationMessage.innerHTML = err
-})
+});
+
+
+
+
+
 
 
 

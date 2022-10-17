@@ -10,17 +10,15 @@ const postDetailContainer = document.getElementById("post-details");
 
 async function getPostById() {
     const response = await fetch(`${GET_POST_BY_ID_URL}/${postId}`, {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${accessToken}`
+        method: "GET", headers: {
+            "Content-Type": "application/json", "Authorization": `Bearer ${accessToken}`
         }
     })
     const data = await response.json()
     const {title, body, created, updated, id} = data;
 
     postDetailContainer.innerHTML = `
-    <dl class="">
+    <dl>
         <div class="bg-gray-200 px-4 py-5 sm:grid sm:grid-cols-3 sm:_gap-4 sm:px-6">
             <dt class="capitalize text-sm font-medium text-gray-600">Title</dt>
             <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">${title}</dd>
@@ -41,15 +39,7 @@ async function getPostById() {
             <dt class="capitalize text-sm font-medium text-gray-600">Edited</dt>
             <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">${updated}</dd>
         </div>
-        
-    
-    </dl>
-        
-                
-    
-    
-    
-    `
+    </dl>`
 }
 
 getPostById();
