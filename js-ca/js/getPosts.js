@@ -3,19 +3,26 @@ import moment from "moment";
 import {GET_POSTS_URL} from "./settings/api.js";
 import {getToken} from "./utils/storage.js";
 
-const searchBar = document.querySelector("#postSearch")
+const searchBar = document.getElementById('postSearch')
 const postContainer = document.querySelector("#posts-container");
 const postNotificationMessage = document.querySelector(".posts__notification");
 const accessToken = getToken();
 
 
-console.log(searchBar)
 
 
+//TODO under
+let response = [];
 
+searchBar.addEventListener('keyup', (e) => {
+    console.log(e.target.value);
+    response.filter( titleOfPost =>{
+        pos
+    })
 
+});
 
-
+//TODO over
 
 
 
