@@ -67,11 +67,3 @@ if (!accessToken) {
 })().catch(err => {
     postNotificationMessage.innerHTML = err
 });
-
-
-
-
-
-
-
-

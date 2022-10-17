@@ -16,7 +16,6 @@ function getToken() {
     }
 }
 
-// save user object
 function saveUser(user) {
     saveToStorage(userKey, user);
 }
@@ -30,12 +29,10 @@ function getUserName() {
     }
 }
 
-// function which save data to the local storage
 function saveToStorage(key, value) {
     localStorage.setItem(key, JSON.stringify(value))
 }
 
-// function which gets data from the local storage
 function getFromStorage(key) {
     const value = localStorage.getItem(key);
     if (value) {

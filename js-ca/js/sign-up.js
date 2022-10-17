@@ -110,5 +110,3 @@ signUpForm.addEventListener('submit', function (event) {
     }
 
 });
-
-

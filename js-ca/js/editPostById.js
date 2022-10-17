@@ -10,8 +10,6 @@ const postDescription = document.querySelector("#postDescription");
 const postDescriptionError = document.querySelector("#postDescriptionError");
 
 
-
-
 const paramString = window.location.search
 const searchParam = new URLSearchParams(paramString);
 const postId = searchParam.get("post_id");

@@ -86,7 +86,6 @@ function handleDeletePostById(id) {
                     "Authorization": `Bearer ${accessToken}`
                 }
 
-
             });
             if (response.status === 200) {
                 getUserPosts().then(() => {
