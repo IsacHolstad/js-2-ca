@@ -15,7 +15,6 @@
 
     </div>
 </header>
-
 <div class="container  mx-auto text-center p-8 drop-shadow-md">
     <form
             id="login-form"
@@ -49,60 +48,25 @@
         >
                 Email Is Required
             </span>
-        <label for="password"
-               class="text-gray-500 text-center"
-        >
-            Password: (Required)
-        </label>
+        <label for="password" class="text-gray-500 text-center">Password: (Required)</label>
         <input
                 id="password"
-                autocomplete="on"
                 class="p-2 rounded-xl border-2"
                 name="password"
                 type="password"
                 placeholder="*************">
         <span
-                id="passwordError"
-                class="hidden text-sm text-red-500"
-
-        >
-             Password is required and must be over 5 chars
-
+            id="passwordError"
+            class="hidden text-sm text-red-600">
+            password must bee over 8 chars
         </span>
-        <span
-                id="passwordErrorNotValid"
-                class="hidden text-sm text-red-500"
-        >
-            Password not valid
-        </span>
-        <label for="confirm_password" class="text-gray-500 text-center">Confirm password: (Required)</label>
-        <input
-                id="confirm_password"
-                autocomplete="on"
-                class="p-2 rounded-xl border-2"
-                name="password"
-                type="password"
-                placeholder="Confirm Password"
-        >
-        <span
-                id="confirmPasswordErrorNotMatching"
-                class="hidden text-sm text-red-500"
-        >
-            Password dosent match
 
-        </span>
-        <span
-                id="confirmPasswordError"
-                class="hidden text-sm text-red-500"
-        >
-            Confirm Password is required and must be 5 chars
 
-        </span>
         <button
                 class="p-2 mt-4 text-blue-600 border-2 rounded-xl bg-transparent border-blue-600 hover:bg-blue-600 hover:text-white"
                 type="submit"
         >
-            Sign In
+            Log in
 
         </button>
         <p id="general-error-message" class="capitalize text-3xl text-red-500"></p>

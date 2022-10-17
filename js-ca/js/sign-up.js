@@ -1,7 +1,7 @@
 import {USER_SIGNUP_URL} from "./settings/api.js";
 import {validatePassword, validateEmail} from "./utils/validation.js";
 
-const contactForm = document.querySelector("#signup-form");
+const signUpForm = document.querySelector("#signup-form");
 
 const firstName = document.querySelector("#firstName");
 const firstNameError = document.querySelector("#firstNameError")
@@ -19,7 +19,7 @@ const confirmPasswordError = document.querySelector("#confirmPasswordError");
 const confirmPasswordErrorNotMatching = document.querySelector("#confirmPasswordErrorNotMatching");
 const generalErrorMessage = document.querySelector("#general-error-message");
 
-contactForm.addEventListener("submit", function (event) {
+signUpForm.addEventListener('submit', function (event) {
     event.preventDefault();
 
     let isFirstName = false;
@@ -66,7 +66,7 @@ contactForm.addEventListener("submit", function (event) {
     isValidPasswordMatch = validatePassword(password.value, confirmPassword.value);
     if (isValidPasswordMatch) {
         confirmPasswordErrorNotMatching.classList.add("hidden")
-        isValidPasswordMatch = true;
+        isValidPasswordMatch = true
     } else {
         confirmPasswordErrorNotMatching.classList.remove("hidden")
     }
@@ -76,6 +76,7 @@ contactForm.addEventListener("submit", function (event) {
         isPassword &&
         isConfirmPassword &&
         isValidPasswordMatch;
+
     if (isFormValid) {
         const userData = {
             "name": firstName.value,

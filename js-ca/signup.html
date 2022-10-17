@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8"/>
     <title>:: Signup ::</title>
-    <link rel="icon" type="image/svg+xml" href="/vite.svg"/>
     <script type="module" src="./js/main.js" defer></script>
     <script type="module" src="./js/sign-up.js" defer></script>
 
@@ -14,118 +13,110 @@
 
     </div>
 </header>
-<div class="container  mx-auto text-center p-8 drop-shadow-md	">
+<div class="container mx-auto text-center p-8 drop-shadow-md">
+
     <form
             id="signup-form"
-            class="flex flex-col gap-y-2 p-8 m-8 mx-auto w-96 bg-gray-200 rounded-md border shadow text-left"
-    >
-        <h1 class="text-center text-3xl">😎 Create Account 😎</h1>
-        <label for="FirstName"
-               class="text-gray-500 text-center"
-        >
-            First Name: (Required)
-        </label>
+            class="flex flex-col gap-y-2 p-8 m-8 mx-auto w-96 bg-gray-200 rounded-md border shadow text-left">
+        <h1 class="text-center text-3xl">😃 Sign up 😃</h1>
+        <div class="flex flex-col gap-y-1">
+            <label for="firstName"
+                   class="text-gray-600"
+            >
+                First Name: Required
+            </label>
+            <input
+                    id="firstName"
+                    class="p-2 rounded-xl border-2"
+                    name="firstName"
+                    type="text"
+                    placeholder="Name"
+                    spellcheck="true"
+            >
+            <span
+                    id="firstNameError"
+                    class="hidden text-sm text-red-600"
+            >
+                Please enter your first name</span>
+        </div>
 
-        <input
-                id="FirstName"
-                class="p-2 rounded-xl border-2"
-                name="firstName"
-                type="text"
-                placeholder="First Name"
-        >
-        <span
-                id="firstNameError"
-                class="hidden text-red-800 text-sm"
-
-        >
-                First Name Is Required
+        <div class="flex flex-col gap-y-1">
+            <label for="email" class="text-gray-600">Email: Required </label>
+            <input
+                    id="email"
+                    class="p-2 rounded-xl border-2"
+                    name="email"
+                    type="text"
+                    placeholder="Enter email">
+            <span
+                    id="emailErrorNotValid"
+                    class="hidden text-sm text-red-600"
+            >
+                Email must be a stud.noroff.no or noroff.no email address
             </span>
-        <label for="email"
-               class="text-gray-500 text-center"
-        >
-            Email: (Required)
-        </label>
-        <input
-                id="email"
-                class="p-2 rounded-xl border-2"
-                name="email"
-                type="email"
-                placeholder="Example@stud.noroff.no"
-        >
-        <span
-                id="emailErrorNotValid"
-                class="hidden text-sm text-red-500"
+            <span
+                    id="emailError"
+                    class="hidden text-sm text-red-600"
+            >
+                Email is required
+                </span>
 
-        >
-            Email is not valid must be a valid stud.noroff.no or noroff.no email address
-
-        </span>
-        <span
-                id="emailError"
-                class="hidden text-red-800 text-sm"
-
-        >
-                Email Is Required
-            </span>
-        <label for="password"
-               class="text-gray-500 text-center"
-        >
-            Password: (Required)
-        </label>
-        <input
-                id="password"
-                class="p-2 rounded-xl border-2"
-                name="password"
-                type="password"
-                placeholder="*************">
-        <span
-                id="passwordError"
-                class="hidden text-sm text-red-500"
-
-        >
-             Password is required and must be over 8 chars
-
-        </span>
-        <span
-                id="passwordErrorNotValid"
-                class="hidden text-sm text-red-500"
-        >
-            Password not valid
-        </span>
-        <label for="confirm_password" class="text-gray-500 text-center">Confirm password: (Required)</label>
-        <input
-                id="confirm_password"
-                class="p-2 rounded-xl border-2"
-                name="password"
-                type="password"
-                placeholder="Confirm Password"
-        >
-        <span
-                id="confirmPasswordErrorNotMatching"
-                class="hidden text-sm text-red-500"
-        >
-            Password dosent match
-
-        </span>
-        <span
-                id="confirmPasswordError"
-                class="hidden text-sm text-red-500"
-        >
-            Confirm Password is required and must be 5 chars
-
-        </span>
+        </div>
+        <div class="flex flex-col gap-y-1">
+            <label for="password" class="text-gray-600">Password: Required </label>
+            <input
+                    id="password"
+                    class="p-2 rounded-xl border-2"
+                    name="password"
+                    type="password"
+                    placeholder="******">
+            <span
+                    id="passwordError"
+                    class="hidden text-sm text-red-600"
+            >
+                Password is required and must be over 8 chars
+                </span>
+            <span
+                    id="passwordErrorNotValid"
+                    class="hidden text-sm text-red-600"
+            >
+                Password is not valid
+                </span>
+        </div>
+        <div class="flex flex-col gap-y-1">
+            <label for="confirm_password" class="text-gray-600">Confirm Password: Required </label>
+            <input
+                    id="confirm_password"
+                    class="p-2 rounded-xl border-2"
+                    name="password"
+                    type="password"
+                    placeholder="Confirm Password"
+            >
+            <span
+                    id="confirmPasswordErrorNotMatching"
+                    class="hidden text-sm text-red-600"
+            >
+                Passwords doesn't match
+                </span>
+            <span
+                    id="confirmPasswordError"
+                    class="hidden text-sm text-red-600"
+            >
+                Confirm Password is required and must be over 5 chars
+                </span>
+        </div>
         <button
                 class="p-2 mt-4 text-blue-600 border-2 rounded-xl bg-transparent border-blue-600 hover:bg-blue-600 hover:text-white"
                 type="submit"
         >
-            Sign Up
+            Sign In
 
         </button>
         <p id="general-error-message" class="capitalize text-3xl text-red-500"></p>
-    </form>
 </div>
 
-<footer class="p-4 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 absolute bottom-0 w-full">
+
+<footer class="p-4 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 absolute bottom-0 w-full mt-32">
     <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 Isac™ All Rights Reserved.
     </span>
     <ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
@@ -140,6 +131,7 @@
         </li>
     </ul>
 </footer>
+
 
 </body>
 </html>
