@@ -102,6 +102,7 @@ function handleDeletePostById(id) {
         }
     }
     deleteUserById().then(r => {
+        console.log(r)
 
     });
 }
